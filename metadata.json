@@ -2,5 +2,7 @@
   "name": "A Raga Sai - Full-Stack Developer Portfolio",
   "description": "Professional developer portfolio of A Raga Sai, Full-Stack Developer and Computer Engineering undergraduate specializing in Java, React, SQL, Cloud Computing, and API development.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
