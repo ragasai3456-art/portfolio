@@ -11,10 +11,10 @@ export const profileData: Profile = {
   phone: "+91 9159278770",
   github: "https://github.com/ragasai3456-art",
   linkedin: "https://www.linkedin.com/in/adem-raga-sai-a37821293/",
-  resumeUrl: "/assets/resume.pdf",
+  resumeUrl: `${import.meta.env.BASE_URL}assets/resume.pdf`,
   resumeFileName: "resumefin.pdf",
   languages: ["English", "Telugu", "Hindi"],
   status: "Available for Software Engineering & Full-Stack Internships / Roles",
   careerGoals: "Seeking entry-level and internship engineering roles to architect scalable backends, reliable REST APIs, and clean responsive frontends.",
-  avatarUrl: "/assets/photo.jpeg"
+  avatarUrl: `${import.meta.env.BASE_URL}assets/photo.jpeg`
 };

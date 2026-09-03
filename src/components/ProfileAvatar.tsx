@@ -8,9 +8,12 @@ interface ProfileAvatarProps {
   size?: 'sm' | 'md' | 'lg' | 'hero';
 }
 
+const DEFAULT_PHOTO = `${import.meta.env.BASE_URL}assets/photo.jpeg`;
+const FALLBACK_PHOTO = `${import.meta.env.BASE_URL}assets/photo.svg`;
+
 export const ProfileAvatar: React.FC<ProfileAvatarProps> = ({ 
   name, 
-  defaultSrc = '/assets/photo.jpeg', 
+  defaultSrc = DEFAULT_PHOTO, 
   className = '',
   size = 'md'
 }) => {
@@ -32,8 +35,8 @@ export const ProfileAvatar: React.FC<ProfileAvatarProps> = ({
   }, [defaultSrc]);
 
   const handleImgError = () => {
-    if (imgSrc === '/assets/photo.jpeg') {
-      setImgSrc('/assets/photo.svg');
+    if (imgSrc.endsWith('photo.jpeg') || imgSrc === DEFAULT_PHOTO) {
+      setImgSrc(FALLBACK_PHOTO);
     } else {
       setHasError(true);
     }
