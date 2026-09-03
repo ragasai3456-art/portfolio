@@ -133,9 +133,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 <span>Open Live Deployment</span>
               </a>
             ) : (
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded bg-amber-950/30 border border-amber-800/40 text-amber-300 text-xs font-mono">
-                <ShieldAlert className="w-3.5 h-3.5" />
-                <span>Local dev build ({project.localDevUrl || 'MySQL database service'}) &bull; No public URL</span>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded bg-[#1A1C20] border border-[#2D2F36] text-[#A0A4AC] text-xs font-mono">
+                <Github className="w-3.5 h-3.5 text-teal-400" />
+                <span>GitHub Repository (Backend Source)</span>
               </div>
             )}
           </div>

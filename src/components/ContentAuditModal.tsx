@@ -85,7 +85,7 @@ export const ContentAuditModal: React.FC<ContentAuditModalProps> = ({ isOpen, on
               <span>2. Handled Constraints &amp; Missing Data</span>
             </span>
             <ul className="space-y-1.5 text-[#80848C] pl-6 list-disc">
-              <li><strong className="text-white">ATM Banking System:</strong> Provided local URL (<code className="text-amber-300">http://localhost:8081/...</code>). Per strict instruction, this was <em>not</em> published as a live public deployment; an interactive simulated interface is provided instead.</li>
+              <li><strong className="text-white">ATM Banking System:</strong> Decoupled Java Servlets backend and React application; designated strictly as a GitHub repository rather than a live public URL.</li>
               <li><strong className="text-white">Student Database System:</strong> Backend MySQL service; marked as database architecture and SQL query repository rather than artificial frontend demo.</li>
               <li><strong className="text-white">Volunteering Years:</strong> Year/date was not provided for GStudio Photography Club, Symposium, and Homecoming; displayed without fabricated years.</li>
               <li><strong className="text-white">ServiceNow CSA:</strong> Did not claim ServiceNow Certified System Administrator (CSA) certification since documents only specify exam prep &amp; virtual internship completion.</li>

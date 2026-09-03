@@ -78,5 +78,19 @@ export const certificationsData: Certification[] = [
       "Report generation and system performance analytics",
       "Introduction to Agile methodologies in enterprise environments"
     ]
+  },
+  {
+    id: "prodigy-infotech-fullstack",
+    title: "Full-Stack Web Development Internship Certificate",
+    issuer: "Prodigy InfoTech",
+    issueDate: "31 March 2026",
+    badgeType: "Prodigy",
+    certificateAvailable: true,
+    topics: [
+      "Full-stack architecture with Java Servlets backend and MySQL database",
+      "Responsive user interface engineering with HTML5, CSS3, and JavaScript",
+      "RESTful API integration and client-server state management",
+      "Git version control and agile software development practices"
+    ]
   }
 ];

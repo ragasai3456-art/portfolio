@@ -36,7 +36,6 @@ export interface Project {
   technologies: string[];
   githubUrl: string;
   liveDemoUrl?: string; // Only set if public live deployment exists!
-  localDevUrl?: string; // e.g. http://localhost:8081 for internal reference
   screenshotNote?: string;
   featured: boolean;
   uiMockupType?: 'weather' | 'atm' | 'database';
@@ -78,7 +77,7 @@ export interface Certification {
   courseHours?: string;
   credentialId?: string;
   verificationUrl?: string;
-  badgeType: 'AWS' | 'Cisco' | 'Google' | 'ServiceNow';
+  badgeType: 'AWS' | 'Cisco' | 'Google' | 'ServiceNow' | 'Prodigy' | string;
   topics: string[];
   certificateAvailable: boolean;
 }

@@ -178,12 +178,15 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   ) : (
-                    <span 
-                      className="p-2 text-[#60646C] bg-[#16181D] border border-[#2D2F36] rounded cursor-not-allowed"
-                      title="Backend service / Local DB — no live URL per source rule"
+                    <a 
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-2.5 py-1.5 text-[11px] font-mono text-[#80848C] hover:text-teal-300 bg-[#1A1C20] border border-[#2D2F36] rounded hover:border-teal-500/40 transition-colors"
+                      title="GitHub Repository"
                     >
-                      <ShieldAlert className="w-4 h-4 text-amber-500/70" />
-                    </span>
+                      Repository
+                    </a>
                   )}
                 </div>
               </div>

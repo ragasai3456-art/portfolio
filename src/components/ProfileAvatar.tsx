@@ -8,23 +8,28 @@ interface ProfileAvatarProps {
   size?: 'sm' | 'md' | 'lg' | 'hero';
 }
 
-const DEFAULT_PHOTO = `${import.meta.env.BASE_URL}assets/photo.jpeg`;
-const FALLBACK_PHOTO = `${import.meta.env.BASE_URL}assets/photo.svg`;
+const PHOTO_PATHS = [
+  `${import.meta.env.BASE_URL}assets/photo.jpeg`,
+  `${import.meta.env.BASE_URL}profile.jpg`,
+  `${import.meta.env.BASE_URL}assets/photo.jpg`,
+  `${import.meta.env.BASE_URL}photo.jpeg`
+];
 
 export const ProfileAvatar: React.FC<ProfileAvatarProps> = ({ 
   name, 
-  defaultSrc = DEFAULT_PHOTO, 
+  defaultSrc, 
   className = '',
   size = 'md'
 }) => {
-  const [imgSrc, setImgSrc] = useState<string>(defaultSrc);
+  const [pathIndex, setPathIndex] = useState(0);
+  const [imgSrc, setImgSrc] = useState<string>(defaultSrc || PHOTO_PATHS[0]);
   const [hasError, setHasError] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // Check if user previously saved a local photo
+    // Check if user previously uploaded a local photo
     const saved = localStorage.getItem('raga_sai_avatar');
     if (saved) {
       setImgSrc(saved);
@@ -32,12 +37,18 @@ export const ProfileAvatar: React.FC<ProfileAvatarProps> = ({
     } else if (defaultSrc) {
       setImgSrc(defaultSrc);
       setHasError(false);
+    } else {
+      setPathIndex(0);
+      setImgSrc(PHOTO_PATHS[0]);
+      setHasError(false);
     }
   }, [defaultSrc]);
 
   const handleImgError = () => {
-    if (imgSrc.endsWith('photo.jpeg') || imgSrc === DEFAULT_PHOTO) {
-      setImgSrc(FALLBACK_PHOTO);
+    if (pathIndex + 1 < PHOTO_PATHS.length) {
+      const nextIndex = pathIndex + 1;
+      setPathIndex(nextIndex);
+      setImgSrc(PHOTO_PATHS[nextIndex]);
     } else {
       setHasError(true);
     }
@@ -117,17 +128,16 @@ export const ProfileAvatar: React.FC<ProfileAvatarProps> = ({
             referrerPolicy="no-referrer"
           />
         ) : (
-          /* Stylized Portrait Vector Fallback matching the uploaded photo */
-          <div className="w-full h-full flex flex-col items-center justify-center p-4 bg-gradient-to-b from-[#1E2922] via-[#16181D] to-[#121316] text-center select-none relative">
-            <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-emerald-500/10 blur-xl" />
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-pink-900/40 via-[#2A2328] to-emerald-950/40 border border-teal-500/30 flex items-center justify-center mb-2 shadow-inner">
-              <User className="w-8 h-8 sm:w-10 sm:h-10 text-teal-300" />
+          /* Neutral Portrait Frame Placeholder */
+          <div className="w-full h-full flex flex-col items-center justify-center p-4 bg-[#16181D] text-center select-none relative">
+            <div className="w-12 h-12 rounded-full bg-teal-950/40 border border-teal-500/40 flex items-center justify-center mb-2 shadow-inner">
+              <Camera className="w-6 h-6 text-teal-300" />
             </div>
-            <span className="text-[12px] font-mono text-teal-300 font-medium tracking-tight">
-              A Raga Sai
+            <span className="text-xs font-mono text-[#F0F0F0] font-medium tracking-tight">
+              {name}
             </span>
-            <span className="text-[10px] font-mono text-[#80848C] mt-1 flex items-center gap-1">
-              <Camera className="w-3 h-3 text-teal-400" /> Click to choose photo
+            <span className="text-[10px] font-mono text-teal-400 mt-1 flex items-center gap-1">
+              Professional Photo
             </span>
           </div>
         )}

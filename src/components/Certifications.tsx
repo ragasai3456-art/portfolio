@@ -38,7 +38,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ certifications }
 
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-950/30 border border-teal-800/40 text-teal-300 text-xs font-mono">
             <ShieldCheck className="w-4 h-4 text-teal-400" />
-            <span>5 Industry Verified Credentials</span>
+            <span>{certifications.length} Industry Verified Credentials</span>
           </div>
         </div>
 

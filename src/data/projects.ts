@@ -62,7 +62,6 @@ export const projectsData: Project[] = [
     role: "Full-Stack Developer (React frontend architecture, Java Servlets API development, transaction logic)",
     technologies: ["React.js", "Java Servlets", "Java", "Object-Oriented Programming (OOP)", "React Hooks", "HTML5", "CSS3"],
     githubUrl: "https://github.com/ragasai3456-art/ATMSystem/tree/main",
-    localDevUrl: "http://localhost:8081/ATMSystem/login.html",
     uiMockupType: "atm"
   },
   {
