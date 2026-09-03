@@ -23,7 +23,7 @@ export const volunteeringData: VolunteeringItem[] = [
     id: "college-symposium",
     title: "College Technical Symposium",
     organization: "College Campus Event",
-    role: "Event Volunteer",
+    role: "Volunteer",
     category: "College Event",
     contributions: [
       "Volunteered during the college symposium to support operational and on-ground logistics.",
@@ -41,7 +41,7 @@ export const volunteeringData: VolunteeringItem[] = [
     id: "college-homecoming",
     title: "College Homecoming Event",
     organization: "College Campus Event",
-    role: "Event Volunteer",
+    role: "Volunteer",
     category: "College Event",
     contributions: [
       "Supported organizational workflows and logistical needs during the annual college homecoming celebration.",

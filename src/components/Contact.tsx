@@ -29,7 +29,13 @@ export const Contact: React.FC<ContactProps> = ({ profile }) => {
   const contactEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT;
 
   const copyToClipboard = (text: string, field: string) => {
-    navigator.clipboard.writeText(text);
+    try {
+      if (navigator?.clipboard?.writeText) {
+        navigator.clipboard.writeText(text).catch(() => {});
+      }
+    } catch {
+      // Ignore clipboard failure in restricted browsers
+    }
     setCopiedField(field);
     setTimeout(() => setCopiedField(null), 2500);
   };

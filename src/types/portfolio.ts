@@ -14,7 +14,6 @@ export interface Profile {
   languages: string[];
   status: string;
   careerGoals: string;
-  avatarUrl?: string;
 }
 
 export type ProjectCategory = 'All' | 'Full Stack' | 'Web Development' | 'Databases & APIs';

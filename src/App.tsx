@@ -28,8 +28,14 @@ export default function App() {
   const [isAuditOpen, setIsAuditOpen] = useState(false);
 
   useEffect(() => {
-    // Check initial preference from localStorage or system
-    const savedTheme = localStorage.getItem('theme');
+    // Check initial preference safely (resilient to incognito/private browsing storage blocks)
+    let savedTheme: string | null = null;
+    try {
+      savedTheme = localStorage.getItem('theme');
+    } catch {
+      // Storage access blocked or restricted
+    }
+
     if (savedTheme === 'light') {
       setDarkMode(false);
       document.documentElement.classList.remove('dark');
@@ -47,11 +53,19 @@ export default function App() {
       if (next) {
         document.documentElement.classList.add('dark');
         document.documentElement.classList.remove('light');
-        localStorage.setItem('theme', 'dark');
+        try {
+          localStorage.setItem('theme', 'dark');
+        } catch {
+          // Storage quota or restriction
+        }
       } else {
         document.documentElement.classList.remove('dark');
         document.documentElement.classList.add('light');
-        localStorage.setItem('theme', 'light');
+        try {
+          localStorage.setItem('theme', 'light');
+        } catch {
+          // Storage quota or restriction
+        }
       }
       return next;
     });

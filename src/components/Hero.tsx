@@ -12,7 +12,6 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { Profile } from '../types/portfolio';
-import { ProfileAvatar } from './ProfileAvatar';
 
 interface HeroProps {
   profile: Profile;
@@ -58,25 +57,24 @@ export const Hero: React.FC<HeroProps> = ({ profile, onOpenResume }) => {
           {/* Left Column: Core Positioning & Bio */}
           <div className="lg:col-span-8 flex flex-col justify-between">
             <div className="space-y-6">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <ProfileAvatar 
-                  name={profile.name} 
-                  defaultSrc={profile.avatarUrl} 
-                  size="hero" 
-                />
-                <div>
-                  <span className="text-[11px] uppercase tracking-[0.35em] text-[#80848C] font-mono mb-2 block">
-                    Engineering Portfolio &bull; Source-of-Truth Verified
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#16181D] border border-[#2D2F36]">
+                  <Terminal className="w-3.5 h-3.5 text-teal-400" />
+                  <span className="text-[11px] uppercase tracking-[0.25em] text-[#80848C] font-mono">
+                    Software Developer Portfolio &bull; A Raga Sai
                   </span>
+                </div>
+                <div>
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-[#F0F0F0] leading-none">
                     {profile.name}
                   </h1>
-                  <div className="mt-3 flex flex-wrap items-center gap-2 sm:gap-3">
+                  <div className="mt-3.5 flex flex-wrap items-center gap-2 sm:gap-3">
                     <span className="text-lg sm:text-xl font-normal text-teal-400 font-mono">
                       Software Developer
                     </span>
-                    <span className="text-xs px-2.5 py-0.5 rounded bg-[#16181D] border border-[#2D2F36] text-[#80848C] font-mono">
-                      Full-Stack &amp; Cloud
+                    <span className="text-[#2D2F36]">&bull;</span>
+                    <span className="text-sm px-2.5 py-0.5 rounded bg-[#16181D] border border-[#2D2F36] text-[#80848C] font-mono">
+                      Full-Stack &amp; Cloud Focus
                     </span>
                   </div>
                 </div>

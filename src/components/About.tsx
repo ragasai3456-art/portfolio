@@ -10,7 +10,6 @@ import {
   Server
 } from 'lucide-react';
 import { Profile } from '../types/portfolio';
-import { ProfileAvatar } from './ProfileAvatar';
 
 interface AboutProps {
   profile: Profile;
@@ -87,21 +86,23 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
             
             {/* Quick Facts Card */}
             <div className="p-6 bg-[#16181D] border border-[#2D2F36] rounded-lg space-y-4">
-              <div className="flex items-center gap-4 border-b border-[#2D2F36] pb-4">
-                <ProfileAvatar 
-                  name={profile.name} 
-                  defaultSrc={profile.avatarUrl} 
-                  size="md" 
-                />
-                <div>
+              <div className="border-b border-[#2D2F36] pb-4">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2 h-2 rounded-full bg-teal-400"></span>
                   <h3 className="text-xs uppercase tracking-[0.3em] text-[#80848C] font-mono">
-                    Profile Identity
+                    Engineering Profile
                   </h3>
-                  <div className="text-sm font-medium text-[#F0F0F0] mt-0.5">
-                    {profile.name}
-                  </div>
-                  <span className="text-[11px] text-teal-400 font-mono block">
+                </div>
+                <div className="text-base font-medium text-[#F0F0F0]">
+                  {profile.name}
+                </div>
+                <div className="flex items-center gap-2 mt-0.5">
+                  <span className="text-[11px] text-teal-400 font-mono">
                     Adem Raga Sai
+                  </span>
+                  <span className="text-[#2D2F36]">&bull;</span>
+                  <span className="text-[11px] text-[#80848C] font-mono">
+                    Computer Engineering
                   </span>
                 </div>
               </div>

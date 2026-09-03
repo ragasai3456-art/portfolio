@@ -61,7 +61,7 @@ export const projectsData: Project[] = [
     outcome: "Engineered a robust full-stack prototype demonstrating secure account management, transaction logging, and real-time state synchronization.",
     role: "Full-Stack Developer (React frontend architecture, Java Servlets API development, transaction logic)",
     technologies: ["React.js", "Java Servlets", "Java", "Object-Oriented Programming (OOP)", "React Hooks", "HTML5", "CSS3"],
-    githubUrl: "https://github.com/ragasai3456-art/ATMSystem/tree/main",
+    githubUrl: "https://github.com/ragasai3456-art/ATMSystem",
     uiMockupType: "atm"
   },
   {
