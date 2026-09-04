@@ -15,5 +15,6 @@ export const profileData: Profile = {
   resumeFileName: "resumefin.pdf",
   languages: ["English", "Telugu", "Hindi"],
   status: "Available for Software Engineering & Full-Stack Internships / Roles",
-  careerGoals: "Seeking entry-level and internship engineering roles to architect scalable backends, reliable REST APIs, and clean responsive frontends."
+  careerGoals: "Seeking entry-level and internship engineering roles to architect scalable backends, reliable REST APIs, and clean responsive frontends.",
+  photoUrl: `${import.meta.env.BASE_URL}assets/photo.jpeg`
 };
